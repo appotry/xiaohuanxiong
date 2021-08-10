@@ -42,8 +42,8 @@ class Postbot
                 }
                 $book->tags = trim($data['tags']);
                 $book->end = trim($data['end']);
-                $book->start_pay = trim($data['start_pay']);
-                $book->money = trim($data['money']);
+                $book->start_pay = 9999;
+                $book->money = 0;
                 $book->cover_url = trim($data['cover_url']);
                 $book->summary = trim($data['summary']);
                 $book->last_time = time();
