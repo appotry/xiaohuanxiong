@@ -3,6 +3,7 @@
 
 namespace app\app\controller;
 
+
 use app\service\PromotionService;
 use app\validate\Phone;
 use app\validate\User as UserValidate;
@@ -178,7 +179,7 @@ class Account extends Base
 
     public function phonelogin() {
         $data = request()->param();
-        if (vcode($data['stoken'], $data['code'], $data['mobile']) == 0) {
+        if (verifycode($data['stoken'], $data['code'], $data['mobile']) == 0) {
             return json(['success' => 0, 'msg' => '验证码错误']);
         }
         $validate = new Phone();

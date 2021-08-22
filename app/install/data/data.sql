@@ -28,7 +28,7 @@ CREATE TABLE `{{$pk}}user`
     `mobile`          char(11)     DEFAULT '' COMMENT '会员手机号',
     `email`           char(32)     DEFAULT '' COMMENT '会员邮箱',
     `password`        char(32) NOT NULL,
-    `level`           int          default '1' COMMENT '1为游客，2为正式用户',
+    `level`           int          default '1' COMMENT '1为游客，2为正式用户,3为作者',
     `autopay`         tinyint(4) default 1 COMMENT '是否自动购买章节',
     `create_time`     int(10) unsigned DEFAULT '0',
     `update_time`     int(10) unsigned DEFAULT '0',

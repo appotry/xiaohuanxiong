@@ -31,6 +31,10 @@ class ComposerStaticInit6c205f7902622f3d453da6a609c50c48
             'think\\app\\' => 10,
             'think\\' => 6,
         ),
+        'f' => 
+        array (
+            'fengqi\\Hanzi\\' => 13,
+        ),
         'a' => 
         array (
             'app\\' => 4,
@@ -109,6 +113,10 @@ class ComposerStaticInit6c205f7902622f3d453da6a609c50c48
             1 => __DIR__ . '/..' . '/topthink/think-helper/src',
             2 => __DIR__ . '/..' . '/topthink/think-orm/src',
             3 => __DIR__ . '/..' . '/topthink/think-template/src',
+        ),
+        'fengqi\\Hanzi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fengqi/hanzi/src',
         ),
         'app\\' => 
         array (

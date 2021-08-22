@@ -18,8 +18,6 @@ class Index extends BaseAdmin
 {
     public function index()
     {
-        $ver = file_get_contents(App::getRootPath() . "/ver.txt");
-        View::assign('ver', $ver);
         return view();
     }
 
