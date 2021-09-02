@@ -1,9 +1,10 @@
 # xiaohuanxiong
 开源有态度的漫画CMS
 
-文档地址：https://www.kancloud.cn/hiliqi/raccoon5/1921259
-官方QQ群：780362399
-开源协议
+- 文档地址：https://www.kancloud.cn/hiliqi/raccoon5/1921259
+- 官方QQ群：780362399
+
+# 开源协议
 本程序采用Apache协议开源
 
 # 免责声明
