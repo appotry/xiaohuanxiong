@@ -3,13 +3,13 @@
 
 namespace app\admin\controller;
 
-use app\service\PhotoService;
 use app\model\Chapter;
 use app\model\Book;
 use app\model\Photo;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\exception\ValidateException;
+use think\facade\Db;
 use think\facade\View;
 
 class Photos extends BaseAdmin
@@ -36,7 +36,8 @@ class Photos extends BaseAdmin
         $chapter_id = input('chapter_id');
         $page = intval(input('page'));
         $limit = intval(input('limit'));
-        $data = Photo::where('chapter_id', '=', $chapter_id);
+        $data =  Db::name('photo')->where('chapter_id', '=', $chapter_id)
+            ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']);
         $count = $data->count();
         $pics = $data->limit(($page - 1) * $limit, $limit)
             ->order('pic_order', 'desc')->select();
@@ -110,7 +111,7 @@ class Photos extends BaseAdmin
 
         $id = input('id');
         try {
-            $photo = Photo::findOrFail($id);
+            $photo = Db::name('photo')->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->findOrFail($id);
             if (request()->isPost()) {
                 $id = input('id');
                 $order = input('pic_order');

@@ -52,9 +52,10 @@ class Chapters extends Base
         try {
             $chapter = cache('app:chapter:' . $id);
             if (!$chapter) {
-                $chapter = Chapter::with(['photos' => function ($query) {
-                    $query->order('pic_order');
-                }, 'book'])->findOrFail($id);
+                $chapter = Chapter::with('book')->findOrFail($id);
+                $chapter['photos'] = Db::name('photo')->where('chapter_id','=',$chapter['id'])
+                    ->order('pic_order','desc')
+                    ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->select();
                 foreach ($chapter['photos'] as &$photo) {
                     if (!(substr($photo->img_url, 0, 4) === 'http')) {
                         $photo->img_url = $this->img_domain . $photo->img_url;
@@ -138,7 +139,8 @@ class Chapters extends Base
                     'next' => count($next) > 0 ? $next[0]['id'] : -1
                 ];
             } else {
-                $pic = Photo::where('chapter_id','=',$chapter['id'])->limit(1)->find();
+                $pic = Db::name('photo')->where('chapter_id','=',$chapter['id'])
+                    ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->limit(1)->find();
                 if (substr($pic->img_url, 0, 4) === "http") {
 
                 } else {
