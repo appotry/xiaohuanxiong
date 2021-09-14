@@ -50,7 +50,7 @@ class Picture extends Base
                 $order = $lastPhoto->pic_order + 1; //拿到最新图片的order，加1
             }
             $files = request()->file('pics');
-
+            $data = array();
             if ($files) {
                 $dir = 'book/cover';
                 foreach ($files as $file) {

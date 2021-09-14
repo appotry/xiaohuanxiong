@@ -4,6 +4,7 @@
 namespace app\model;
 
 
+use think\db\exception\ModelNotFoundException;
 use think\facade\Db;
 use think\Model;
 
@@ -74,6 +75,6 @@ class Photo extends Model
     public function getLastPhoto($chapter_id)
     {
         return Db::name('photo')->where('chapter_id', '=', $chapter_id)->order('id', 'desc')
-            ->limit(1)->partition(['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->findOrFail();
+            ->limit(1)->partition(['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->find();
     }
 }
