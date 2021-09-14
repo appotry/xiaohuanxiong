@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yansongda\Supports\Traits;
 
 use GuzzleHttp\Client;
@@ -31,8 +33,6 @@ trait HasHttpRequest
     /**
      * Send a GET request.
      *
-     * @author yansongda <me@yansongda.cn>
-     *
      * @return array|string
      */
     public function get(string $endpoint, array $query = [], array $headers = [])
@@ -45,8 +45,6 @@ trait HasHttpRequest
 
     /**
      * Send a POST request.
-     *
-     * @author yansongda <me@yansongda.cn>
      *
      * @param string|array $data
      *
@@ -66,8 +64,6 @@ trait HasHttpRequest
     /**
      * Send request.
      *
-     * @author yansongda <me@yansongda.cn>
-     *
      * @return array|string
      */
     public function request(string $method, string $endpoint, array $options = [])
@@ -77,10 +73,6 @@ trait HasHttpRequest
 
     /**
      * Set http client.
-     *
-     * @author yansongda <me@yansongda.cn>
-     *
-     * @return $this
      */
     public function setHttpClient(Client $client): self
     {
@@ -103,8 +95,6 @@ trait HasHttpRequest
 
     /**
      * Get default http client.
-     *
-     * @author yansongda <me@yansongda.cn>
      */
     public function getDefaultHttpClient(): Client
     {
@@ -113,10 +103,6 @@ trait HasHttpRequest
 
     /**
      * setBaseUri.
-     *
-     * @author yansongda <me@yansongda.cn>
-     *
-     * @return $this
      */
     public function setBaseUri(string $url): self
     {
@@ -132,8 +118,6 @@ trait HasHttpRequest
 
     /**
      * getBaseUri.
-     *
-     * @author yansongda <me@yansongda.cn>
      */
     public function getBaseUri(): string
     {
@@ -170,8 +154,6 @@ trait HasHttpRequest
 
     /**
      * Get default options.
-     *
-     * @author yansongda <me@yansongda.cn>
      */
     public function getOptions(): array
     {
@@ -184,8 +166,6 @@ trait HasHttpRequest
 
     /**
      * setOptions.
-     *
-     * @author yansongda <me@yansongda.cn>
      *
      * @return $this
      */
@@ -208,8 +188,6 @@ trait HasHttpRequest
 
     /**
      * Convert response.
-     *
-     * @author yansongda <me@yansongda.cn>
      *
      * @return array|string
      */

@@ -10,12 +10,8 @@ trait Serializable
 {
     /**
      * toJson.
-     *
-     * @author yansongda <me@yansongda.cn>
-     *
-     * @return string
      */
-    public function toJson()
+    public function toJson(): string
     {
         return $this->serialize();
     }
@@ -76,6 +72,11 @@ trait Serializable
             throw new RuntimeException('Invalid Json Format');
         }
 
+        $this->unserializeArray($data);
+    }
+
+    public function unserializeArray(array $data): void
+    {
         foreach ($data as $key => $item) {
             if (method_exists($this, 'set')) {
                 $this->set($key, $item);

@@ -23,9 +23,9 @@ class PayService
                     'mode' => 'dev', // optional,设置此参数，将进入沙箱模式
                 ],
             ],
-            'log' => [ // optional
+            'logger' => [ // optional
                 'file' => './logs/alipay.log',
-                'level' => 'info', // 建议生产环境等级调整为 info，开发环境为 debug
+                'level' => 'debug', // 建议生产环境等级调整为 info，开发环境为 debug
                 'type' => 'single', // optional, 可选 daily.
                 'max_file' => 30, // optional, 当 type 为 daily 时有效，默认 30 天
             ],
@@ -42,7 +42,7 @@ class PayService
             'subject' => '漫画充值',
         ];
 
-        $alipay = Pay::alipay($config)->web($order);
-        return ['type' => 'url', 'content' => $alipay->send()];
+        $alipay = Pay::alipay($config)->wap($order);
+        return ['type' => 'url', 'content' => $alipay];
     }
 }
