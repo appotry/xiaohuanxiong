@@ -35,8 +35,8 @@ class Comment extends BaseAdmin
             ->limit(($page - 1) * $limit, $limit)->select();
         foreach ($comments as &$comment)
         {
-            $comment['user'] = User::where('user_id','=',$comment['user_id'])->column('username');
-            $comment['book'] = Book::where('book_id','=',$comment['book_id'])->column('book_name');
+            $comment['user'] = User::where('id','=',$comment['user_id'])->column('username');
+            $comment['book'] = Book::where('id','=',$comment['book_id'])->column('book_name');
         }
         return json([
             'code' => 0,
