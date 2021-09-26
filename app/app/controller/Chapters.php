@@ -5,7 +5,6 @@ namespace app\app\controller;
 
 
 use app\model\Chapter;
-use app\model\Photo;
 use app\model\User;
 use app\model\UserBuy;
 use Firebase\JWT\JWT;

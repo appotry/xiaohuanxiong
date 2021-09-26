@@ -3,9 +3,6 @@
 
 namespace app\app\controller;
 
-
-use app\model\Area;
-use app\model\Author;
 use app\model\Book;
 use app\model\Comments;
 use app\model\UserBuy;

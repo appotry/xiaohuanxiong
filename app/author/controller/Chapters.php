@@ -21,21 +21,23 @@ class Chapters extends Base
         $this->chapterModel = app('chapterModel');
     }
 
-    public function list() {
+    public function list()
+    {
         $book_id = input('book_id');
         View::assign('book_id', $book_id);
         return view();
     }
 
-    public function getlist() {
+    public function getlist()
+    {
         $book_id = input('book_id');
         $page = intval(input('page'));
         $limit = intval(input('limit'));
-        $data = Chapter::where('book_id','=',$book_id)->order('chapter_order', 'desc');
+        $data = Chapter::where('book_id', '=', $book_id)->order('chapter_order', 'desc');
         $count = $data->count();
         $chapters = $data->limit(($page - 1) * $limit, $limit)->select();
         foreach ($chapters as &$chapter) {
-            $chapter['count'] = Photo::where('chapter_id','=',$chapter['id'])->count();
+            $chapter['count'] = Photo::where('chapter_id', '=', $chapter['id'])->count();
         }
         return json([
             'code' => 0,
@@ -45,29 +47,30 @@ class Chapters extends Base
         ]);
     }
 
-    public function create() {
+    public function create()
+    {
         if (request()->isPost()) {
             $data = request()->param();
             $result = Chapter::create($data);
-            if ($result){
+            if ($result) {
                 $param = [
                     "id" => $data["book_id"],
                     "last_time" => time()
                 ];
                 $result2 = Book::update($param);
                 if ($result2) {
-                    return json(['err' =>0,'msg'=>'添加成功']);
+                    return json(['err' => 0, 'msg' => '添加成功']);
                 } else {
-                    return json(['err' =>1,'msg'=>'添加失败']);
+                    return json(['err' => 1, 'msg' => '添加失败']);
                 }
-            }else{
-                return json(['err' =>1,'msg'=>'添加失败']);
+            } else {
+                return json(['err' => 1, 'msg' => '添加失败']);
             }
         }
         $book_id = input('book_id');
         $lastChapterOrder = 0;
         $lastChapter = $this->chapterModel->getLastChapter($book_id);
-        if ($lastChapter){
+        if ($lastChapter) {
             $lastChapterOrder = $lastChapter->chapter_order;
         }
         View::assign([
@@ -77,7 +80,8 @@ class Chapters extends Base
         return view();
     }
 
-    public function edit() {
+    public function edit()
+    {
         $id = input('id');
         try {
             $chapter = Chapter::findOrFail($id);
@@ -86,9 +90,9 @@ class Chapters extends Base
                 $chapter->order = input('chapter_order');
                 $result = $chapter->save();
                 if ($result) {
-                    return json(['err' =>0,'msg'=>'编辑成功']);
+                    return json(['err' => 0, 'msg' => '编辑成功']);
                 } else {
-                    return json(['err' =>1,'msg'=>'编辑失败']);
+                    return json(['err' => 1, 'msg' => '编辑失败']);
                 }
             } else {
                 View::assign('chapter', $chapter);
@@ -99,17 +103,69 @@ class Chapters extends Base
         }
     }
 
+    public function upload()
+    {
+        $book_id = input('book_id');
+        if (request()->isPost()) {
+            $chapter_id = 0;
+            $corder = 1;
+            $porder = 1;
+            $fp = fopen(request()->file('file'), 'rb');
+            while (($line = fgets($fp)) !== false) {
+                $line = str_replace(["\r\n", "\r", "\n"],"",$line);
+                if (strlen($line) >= 3) {
+                    $str = $this->getTxtcontent($line);
+                    if (strpos($str, '第') !== false) { //说明是章节名
+                        $chapter = new Chapter();
+                        $chapter->chapter_name = $str;
+                        $chapter->book_id = $book_id;
+                        $chapter->chapter_order = $corder;
+                        $chapter->save();
+                        $chapter_id = $chapter['id'];
+                        $corder++;
+                        echo '<p style="padding-left:15px;font-weight: 400;color:#999;">创建章节' . $str . '</p>';
+                    } else { //说明是图片地址
+                        if ($chapter_id > 0) {
+                            $photo = new Photo();
+                            $photo->chapter_id = $chapter_id;
+                            $photo->pic_order = $porder;
+                            $photo->img_url = $str;
+                            $porder++;
+                            $photo->save();
+                            echo '<p style="padding-left:15px;font-weight: 400;color:#999;">创建图片</p>';
+                        } else {
+                            echo '<p style="padding-left:15px;font-weight: 400;color:#999;">章节ID不对</p>';
+                        }
+                    }
+                }
+            }
+        }
+        View::assign('book_id', $book_id);
+        return view();
+    }
+
+    private function getTxtcontent($str)
+    {
+        $encoding = mb_detect_encoding($str, array('GB2312', 'GBK', 'UTF-16', 'UCS-2', 'UTF-8', 'BIG5', 'ASCII'));
+        if ($encoding != false) {
+            $str = iconv($encoding, 'UTF-8', $str);
+        } else {
+            $str = mb_convert_encoding($str, 'UTF-8', 'Unicode');
+        }
+        return $str;
+    }
+
     public function delete()
     {
         $id = input('id');
         try {
             $chapter = Chapter::findOrFail($id);
             $photos = $chapter->photos;
-            if (count($photos) > 0){
-                return ['err'=>1,'msg'=>'章节下还存在图片，请先删除'];
+            if (count($photos) > 0) {
+                return ['err' => 1, 'msg' => '章节下还存在图片，请先删除'];
             }
             $chapter->delete();
-            return ['err'=>0,'msg'=>'删除成功'];
+            return ['err' => 0, 'msg' => '删除成功'];
         } catch (DataNotFoundException $e) {
             abort(404, $e->getMessage());
         } catch (ModelNotFoundException $e) {

@@ -29,6 +29,9 @@ return [
 //        'getway' => 'https://openapi.alipay.com/gateway.do',
 //        'appPublicKey' => '',
 //        'appPrivateKey' => '',
+//        'app_public_cert_path' => '',
+//        'alipay_public_cert_path'  => '',
+//        'alipay_root_cert_path' => '',
 //        'channel' => [
 //            ['code' => '903', 'img' => 'alipay', 'title' => '支付宝'],
 //        ]

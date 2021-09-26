@@ -18,6 +18,12 @@ class PayService
                     'app_id' => config('payment.pay.appid'),
                     // 加密方式： **RSA2**; 公钥证书模式
                     'app_secret_cert' => config('payment.pay.appPublicKey'),
+                    // 应用公钥证书路径
+                    'app_public_cert_path' => config('payment.pay.app_public_cert_path'),
+                    // 支付宝公钥证书路径
+                    'alipay_public_cert_path' => config('payment.pay.alipay_public_cert_path'),
+                    // 支付宝根证书路径
+                    'alipay_root_cert_path' => config('payment.pay.alipay_root_cert_path'),
                     'notify_url' => config('site.api_domain') . '/paynotify', // 支付后通知地址（作为支付成功回调，这个可靠）
                     'return_url' => config('payment.returnUrl'),
                     'mode' => 'dev', // optional,设置此参数，将进入沙箱模式

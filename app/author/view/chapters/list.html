@@ -54,15 +54,14 @@
 {/block}
 {block name="js"}
 <script>
-    layui.use(['layer', 'form', 'table', 'util', 'dropdown', 'admin', 'index'], function () {
+    layui.use(['layer', 'table',  'dropdown', 'admin', 'index', 'upload'], function () {
         var $ = layui.jquery;
         var layer = layui.layer;
-        var form = layui.form;
         var table = layui.table;
-        var util = layui.util;
         var admin = layui.admin;
         var index = layui.index;
         var dropdown = layui.dropdown;
+        var upload = layui.upload;
 
         /* 渲染表格 */
         var insTb = table.render({
@@ -71,6 +70,7 @@
             page: true,
             toolbar: ['<p>',
                 '<button lay-event="add" class="layui-btn layui-btn-sm icon-btn"><i class="layui-icon">&#xe654;</i>添加</button>&nbsp;',
+                '<button id="file-btn-upload" lay-event="upload" class="layui-btn layui-btn-sm icon-btn"><i class="layui-icon">&#xe654;</i>上传</button>&nbsp;',
                 '</p>'].join(''),
             cellMinWidth: 100,
             cols: [[
@@ -115,6 +115,14 @@
                 admin.open({
                     title: '添加章节',
                     url:'{:adminurl("chapters/create")}?book_id=' + {$book_id},
+                    end: function() {
+                        insTb.reload()
+                    }
+                })
+            } else if (obj.event === 'upload') {
+                admin.open({
+                    title: '添加章节',
+                    url:'{:adminurl("upload")}?book_id=' + {$book_id},
                     end: function() {
                         insTb.reload()
                     }
