@@ -57,6 +57,9 @@
                         <button class="layui-btn icon-btn" id="pay" lay-submit>
                             批量付费设置
                         </button>
+                        <button class="layui-btn icon-btn" id="randtag" lay-submit>
+                            随机分类
+                        </button>
                     </div>
                 </div>
             </form>
@@ -94,6 +97,16 @@
             index.openTab({
                 title: '批量付费设置',
                 url: "{:adminurl('books/payment')}",
+                end: function () {
+                    insTb.reload();
+                }
+            })
+        })
+
+        $('#randtag').click(function () {
+            index.openTab({
+                title: '随机分类',
+                url: "{:adminurl('books/randtag')}",
                 end: function () {
                     insTb.reload();
                 }

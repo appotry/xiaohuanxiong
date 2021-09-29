@@ -4,6 +4,7 @@
 namespace app\admin\controller;
 
 use app\model\Book;
+use app\model\Tags;
 use think\db\exception\ModelNotFoundException;
 use think\facade\View;
 use app\model\Area;
@@ -189,6 +190,28 @@ class Books extends BaseAdmin
             return json(['err' => 0, 'msg' => '批量设置成功']);
         }
         return view();
+    }
+
+    public function randtag()
+    {
+        return view('', ['page' => 1]);
+    }
+
+    public function randtag2()
+    {
+        $page = input('page');
+        $tags = Tags::select()->toArray();
+        $books = Book::page($page,100)->select();
+        if ($books->count() > 0) {
+            foreach ($books as &$book) {
+                $book['tags'] = $tags[array_rand($tags)]['tag_name'];
+                $book->save();
+            }
+            return view('randtag',['page' => $page + 1]);
+        } else {
+            return '执行完毕，请手动关闭本页面';
+        }
+
     }
 
     public function delete()
