@@ -100,10 +100,6 @@
                 }
             }
         },
-        mounted() {
-            this.getBooks()
-            this.page = this.page + 15
-        },
         created() {
             window.addEventListener('scroll', this.onScroll);
         }
