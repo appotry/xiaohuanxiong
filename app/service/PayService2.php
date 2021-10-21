@@ -12,8 +12,8 @@ class PayService
 {
     public function submit($order_id, $money, $pay_type, $pay_code)
     {
-        $notifyUrl =  config('site.api_domain') . '/paynotify'; //异步回调地址，外网能访问
-        $backUrl =  config('site.domain') . '/feedback'; //同步回调地址，外网能访问
+        $notifyUrl =  config('site.domain') . '/api.php/paynotify'; //异步回调地址，外网能访问
+        $backUrl =  config('payment.returnUrl'); // 支付后跳转返回地址
         $codepay_id = config('payment.pay.appid');
         $codepay_key = config('payment.pay.appkey');
 

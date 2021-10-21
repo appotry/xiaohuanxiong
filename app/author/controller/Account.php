@@ -57,8 +57,12 @@ class Account extends BaseController
             {
                 return ['code' => 0, 'err' => 1, 'msg' => '验证码错误'];
             }
+            $username = trim(input('username'));
+            if ($username == 'nil') {
+                return ['code' => 0, 'err' => 1, 'msg' => '不允许的用户名'];
+            }
             $map = array();
-            $map[] = ['username', '=', trim(input('username'))];
+            $map[] = ['username', '=', $username];
             $map[] = ['password', '=', md5(strtolower(trim(input('password'))) . config('site.salt'))];
             try {
                 $author = Author::where($map)->findOrFail();
