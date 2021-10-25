@@ -2,55 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/controller/Paynotify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/controller/Paynotify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/author/controller/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/author/controller/Account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/PayService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/PayService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/PayService1.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/PayService1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/PayService2.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/PayService2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/site.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/promises/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/promises/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/promises/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/promises/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/FulfilledPromise.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/FulfilledPromise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/RejectedPromise.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/RejectedPromise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/promises/src/Utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/AppendStream.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/AppendStream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/BufferStream.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/BufferStream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/CachingStream.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/CachingStream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/FnStream.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/FnStream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/PumpStream.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/PumpStream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/ServerRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/ServerRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Stream.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Stream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Uri.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Uri.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/src/Utils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/vendor-bin/php-cs-fixer/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/psr7/vendor-bin/php-cs-fixer/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/mime-type-detection/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/mime-type-detection/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/VarCloner.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/VarCloner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/yansongda/pay/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yansongda/pay/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/yansongda/pay/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yansongda/pay/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/yansongda/pay/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yansongda/pay/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/yansongda/pay/src/Plugin/Alipay/PreparePlugin.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yansongda/pay/src/Plugin/Alipay/PreparePlugin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,17 +20,11 @@
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/vendor/fengqi/hanzi" />
-      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/vendor/php-di/invoker" />
-      <path value="$PROJECT_DIR$/vendor/php-di/php-di" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-view" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-multi-app" />
-      <path value="$PROJECT_DIR$/vendor/php-di/phpdoc-reader" />
       <path value="$PROJECT_DIR$/vendor/overtrue/pinyin" />
-      <path value="$PROJECT_DIR$/vendor/yansongda/supports" />
-      <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
@@ -87,7 +33,6 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-template" />
       <path value="$PROJECT_DIR$/vendor/topthink/framework" />
-      <path value="$PROJECT_DIR$/vendor/yansongda/pay" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-orm" />
@@ -116,7 +61,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../funadmin" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -133,7 +79,10 @@
       <workItem from="1633844028288" duration="578000" />
       <workItem from="1633847733776" duration="1714000" />
       <workItem from="1633854914240" duration="40000" />
-      <workItem from="1634791672940" duration="521000" />
+      <workItem from="1634791672940" duration="748000" />
+      <workItem from="1634808961476" duration="1258000" />
+      <workItem from="1634888745303" duration="18000" />
+      <workItem from="1634888774771" duration="85000" />
     </task>
     <servers />
   </component>
