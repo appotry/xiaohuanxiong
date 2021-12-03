@@ -43,7 +43,7 @@ class Index extends BaseAdmin
         $charge = UserFinance::where($map2)->sum('money');
 
         View::assign([
-           'orders_today' => $orders_today,
+            'orders_today' => $orders_today,
             'user_today' => $user_today,
             'user' => $user,
             'order_payed_today' => $order_payed_today,
@@ -64,7 +64,7 @@ class Index extends BaseAdmin
         $salt = config('site.salt');
         $api_key = config('site.api_key');
         $app_key = config('site.app_key');
-        $front_tpl = config('site.tpl');      
+        $front_tpl = config('site.tpl');
 
         $dirs = array();
         $dir = new DirectoryIterator(App::getRootPath() . 'public/template/');
@@ -85,7 +85,7 @@ class Index extends BaseAdmin
             'api_key' => $api_key,
             'app_key' => $app_key,
             'front_tpl' => $front_tpl,
-            'tpl_dirs' => $dirs,         
+            'tpl_dirs' => $dirs,
         ]);
         return view();
     }
@@ -100,7 +100,7 @@ class Index extends BaseAdmin
             $salt = input('salt');
             $api_key = input('api_key');
             $app_key = input('app_key');
-            $front_tpl = input('front_tpl');       
+            $front_tpl = input('front_tpl');
             $site_code = <<<INFO
 <?php
 return [
@@ -167,12 +167,29 @@ INFO;
     {
         $path = App::getRootPath() . 'public/routeconf.php';
         if ($this->request->isPost()) {
-            $conf = input('json');
+            $BOOKCTRL = input('BOOKCTRL');
+            $CHAPTERCTRL = input('CHAPTERCTRL');
+            $BOOKLISTACT = input('BOOKLISTACT');
+            $SEARCHCTRL = input('SEARCHCTRL');
+            $RANKCTRL = input('RANKCTRL');
+            $UPDATEACT = input('UPDATEACT');
+            $AUTHORCTRL = input('AUTHORCTRL');
+            if (empty($BOOKCTRL) || empty($CHAPTERCTRL) || empty($BOOKLISTACT) || empty($SEARCHCTRL) || empty($RANKCTRL)
+                || empty($UPDATEACT) || empty($AUTHORCTRL)) {
+                return json(['err' => 1, 'msg' => '各项配置不能为空']);
+            }
+
+            $conf = file_get_contents(App::getRootPath() . 'extend' . DS . 'tpl' . DS . 'routeconf.tpl');
+            $conf = str_replace('{BOOKCTRL}', $BOOKCTRL, $conf);
+            $conf = str_replace('{CHAPTERCTRL}', $CHAPTERCTRL, $conf);
+            $conf = str_replace('{BOOKLISTACT}', $BOOKLISTACT, $conf);
+            $conf = str_replace('{SEARCHCTRL}', $SEARCHCTRL, $conf);
+            $conf = str_replace('{RANKCTRL}', $RANKCTRL, $conf);
+            $conf = str_replace('{UPDATEACT}', $UPDATEACT, $conf);
+            $conf = str_replace('{AUTHORCTRL}', $AUTHORCTRL, $conf);
             file_put_contents($path, $conf);
             return json(['err' => 0, 'msg' => '保存成功']);
         }
-        $conf = file_get_contents($path);
-        View::assign('json', $conf);
         return view();
     }
 

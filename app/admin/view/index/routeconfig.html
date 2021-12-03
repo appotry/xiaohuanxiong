@@ -18,12 +18,53 @@
         <div class="layui-card-body">
             <!-- 表单开始 -->
             <form class="layui-form" id="formBasForm" lay-filter="formBasForm">
-
                 <div class="layui-form-item">
-                    <label class="layui-form-label layui-form-required">配置代码:</label>
+                    <label class="layui-form-label layui-form-required">详情页:</label>
                     <div class="layui-input-block">
-                        <textarea class="layui-textarea" name="json" rows="20"
-                                  lay-verType="tips" lay-verify="required" required>{$json}</textarea>
+                        <input name="BOOKCTRL" placeholder="详情页" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-required">章节页:</label>
+                    <div class="layui-input-block">
+                        <input name="CHAPTERCTRL" placeholder="章节页" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-required">分类页:</label>
+                    <div class="layui-input-block">
+                        <input name="BOOKLISTACT" placeholder="分类页" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-required">搜索页:</label>
+                    <div class="layui-input-block">
+                        <input name="SEARCHCTRL" placeholder="搜索页" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-required">排行页:</label>
+                    <div class="layui-input-block">
+                        <input name="RANKCTRL" placeholder="排行页" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-required">更新页:</label>
+                    <div class="layui-input-block">
+                        <input name="UPDATEACT" placeholder="更新页" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-required">作者页:</label>
+                    <div class="layui-input-block">
+                        <input name="AUTHORCTRL" placeholder="作者页" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
                     </div>
                 </div>
 

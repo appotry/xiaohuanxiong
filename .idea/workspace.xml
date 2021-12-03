@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/view/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/view/books/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/view/index/routeconfig.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/view/index/routeconfig.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +64,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../funadmin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -83,6 +86,10 @@
       <workItem from="1634808961476" duration="1258000" />
       <workItem from="1634888745303" duration="18000" />
       <workItem from="1634888774771" duration="85000" />
+      <workItem from="1637898661063" duration="652000" />
+      <workItem from="1638244438256" duration="709000" />
+      <workItem from="1638245517923" duration="154000" />
+      <workItem from="1638533902227" duration="3595000" />
     </task>
     <servers />
   </component>
