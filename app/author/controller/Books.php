@@ -10,7 +10,6 @@ use app\model\Photo;
 use Overtrue\Pinyin\Pinyin;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
-use think\exception\HttpException;
 use think\facade\View;
 
 class Books extends Base
@@ -100,13 +99,24 @@ class Books extends Base
         } else {
             $cover = request()->file('file');
             $dir = 'book/cover';
-            $savename =str_replace ( '\\', '/',
-                \think\facade\Filesystem::disk('public')->putFile($dir, $cover));
-            return json([
-                'code' => 0,
-                'msg' => '',
-                'img' => '/static/upload/'.$savename
-            ]);
+            try {
+                validate(['imgFile' => [
+                    'fileSize' => 10240,
+                    'fileExt' => 'jpg,jpeg,png'
+                ]])->check(['imgFile' => $cover]);
+                $savename =str_replace ( '\\', '/',
+                    \think\facade\Filesystem::disk('public')->putFile($dir, $cover));
+                return json([
+                    'code' => 0,
+                    'msg' => '',
+                    'img' => '/static/upload/'.$savename
+                ]);
+            } catch (\think\exception\ValidateException $e) {
+                return json([
+                    'code' => 1,
+                    'msg' => $e->getMessage(),
+                ]);
+            }
         }
     }
 
