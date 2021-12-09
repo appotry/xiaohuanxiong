@@ -56,8 +56,10 @@ class Chapters extends Base
                     ->order('pic_order','desc')
                     ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->select();
                 foreach ($chapter['photos'] as &$photo) {
-                    if (!(substr($photo->img_url, 0, 4) === 'http')) {
-                        $photo->img_url = $this->img_domain . $photo->img_url;
+                    if (substr($photo['img_url'], 0, 4) === "http") {
+
+                    } else {
+                        $photo['img_url'] = $this->img_domain . $photo['img_url'];
                     }
                 }
                 if (substr($chapter->book->cover_url, 0, 4) === "http") {

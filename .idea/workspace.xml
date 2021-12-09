@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/author/controller/Books.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/author/controller/Books.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon6" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -88,7 +87,8 @@
       <workItem from="1638244438256" duration="709000" />
       <workItem from="1638245517923" duration="154000" />
       <workItem from="1638533902227" duration="4157000" />
-      <workItem from="1638547756822" duration="616000" />
+      <workItem from="1638547756822" duration="870000" />
+      <workItem from="1638706446734" duration="6000" />
     </task>
     <servers />
   </component>
