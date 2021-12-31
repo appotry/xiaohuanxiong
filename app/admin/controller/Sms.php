@@ -11,8 +11,8 @@ class Sms extends BaseAdmin
 {
     public function smsbao(){
         if (request()->isPost()){
-            $username = input('username');
-            $password = input('password');
+            $username = replaceSpecialChar(input('username'));
+            $password = replaceSpecialChar(input('password'));
             $content = <<<INFO
         <?php
         return [

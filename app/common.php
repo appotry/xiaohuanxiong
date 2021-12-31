@@ -42,7 +42,6 @@ function generateRandomString($length = 4)
     return $randomString;
 }
 
-//验证session中的验证码和手机号码是否正确
 function verifycode($code, $phone)
 {
     if (is_null(session('xwx_sms_code')) || $code != session('xwx_sms_code')) {
@@ -93,14 +92,6 @@ function sendcode($_phone, $code)
     return ['status' => $result, 'msg' => $statusStr[$result]];
 }
 
-/**
- * Url生成
- * @param string      $url    路由地址
- * @param array       $vars   变量
- * @param bool|string $suffix 生成的URL后缀
- * @param bool|string $domain 域名
- * return string
- */
 function adminurl(string $url = '', array $vars = [], $suffix = true, $domain = false) {
     $currentModule = app('http')->getName();
     $string = (string) url($url, $vars, $suffix, $domain);
@@ -111,4 +102,9 @@ function adminurl(string $url = '', array $vars = [], $suffix = true, $domain = 
         $string = substr($string, 0, $pos). '/'. substr($string, $pos + strlen($search));
     }
     return $string;
+}
+
+function replaceSpecialChar($strParam){
+    $regex = "/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\_|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/";
+    return preg_replace($regex,"",$strParam);
 }

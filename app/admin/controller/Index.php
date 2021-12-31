@@ -93,14 +93,14 @@ class Index extends BaseAdmin
     public function update()
     {
         if (request()->isPost()) {
-            $site_name = input('site_name');
-            $domain = input('domain');
-            $img_domain = input('img_domain');
-            $mobile_domain = input('mobile_domain');
-            $salt = input('salt');
-            $api_key = input('api_key');
-            $app_key = input('app_key');
-            $front_tpl = input('front_tpl');
+            $site_name = replaceSpecialChar(input('site_name'));
+            $domain = replaceSpecialChar(input('domain'));
+            $img_domain = replaceSpecialChar(input('img_domain'));
+            $mobile_domain = replaceSpecialChar(input('mobile_domain'));
+            $salt = replaceSpecialChar(input('salt'));
+            $api_key = replaceSpecialChar(input('api_key'));
+            $app_key = replaceSpecialChar(input('app_key'));
+            $front_tpl = replaceSpecialChar(input('front_tpl'));
             $site_code = <<<INFO
 <?php
 return [
@@ -198,7 +198,7 @@ INFO;
         if (request()->post()) {
             $book_end_point = input('book_end_point');
             $name_format = input('name_format');
-            $num = input('sitemap_gen_num');
+            $num = replaceSpecialChar(input('sitemap_gen_num'));
             $code = <<<INFO
         <?php
         return [
