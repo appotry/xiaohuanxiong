@@ -136,6 +136,9 @@ INFO;
     {
         if ($this->request->isPost()) {
             $data = $this->request->param();
+            foreach ($data as $key => &$value) {
+                $value = replaceSpecialChar($value);
+            }
             $str = <<<INFO
         <?php
         return [
@@ -167,13 +170,13 @@ INFO;
     {
         $path = App::getRootPath() . 'public/routeconf.php';
         if ($this->request->isPost()) {
-            $BOOKCTRL = input('BOOKCTRL');
-            $CHAPTERCTRL = input('CHAPTERCTRL');
-            $BOOKLISTACT = input('BOOKLISTACT');
-            $SEARCHCTRL = input('SEARCHCTRL');
-            $RANKCTRL = input('RANKCTRL');
-            $UPDATEACT = input('UPDATEACT');
-            $AUTHORCTRL = input('AUTHORCTRL');
+            $BOOKCTRL = replaceSpecialChar(input('BOOKCTRL'));
+            $CHAPTERCTRL = replaceSpecialChar(input('CHAPTERCTRL'));
+            $BOOKLISTACT = replaceSpecialChar(input('BOOKLISTACT'));
+            $SEARCHCTRL = replaceSpecialChar(input('SEARCHCTRL'));
+            $RANKCTRL = replaceSpecialChar(input('RANKCTRL'));
+            $UPDATEACT = replaceSpecialChar(input('UPDATEACT'));
+            $AUTHORCTRL = replaceSpecialChar(input('AUTHORCTRL'));
             if (empty($BOOKCTRL) || empty($CHAPTERCTRL) || empty($BOOKLISTACT) || empty($SEARCHCTRL) || empty($RANKCTRL)
                 || empty($UPDATEACT) || empty($AUTHORCTRL)) {
                 return json(['err' => 1, 'msg' => '各项配置不能为空']);
