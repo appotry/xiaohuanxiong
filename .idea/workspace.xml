@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/m/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/m/books/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/buyhistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/buyhistory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/cashhistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/cashhistory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/charge.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/charge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/chargehistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/chargehistory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/feedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/kami.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/kami.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/spendinghistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/spendinghistory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/vip.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/vip.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/vipexchange.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/vipexchange.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/finance/wallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/finance/wallet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/default/pc/update/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/default/pc/update/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +64,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/template/zymk/pc/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon-site-group" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -123,7 +110,9 @@
       <workItem from="1641549619297" duration="613000" />
       <workItem from="1641621219415" duration="4584000" />
       <workItem from="1641880985137" duration="565000" />
-      <workItem from="1641895024039" duration="1418000" />
+      <workItem from="1641895024039" duration="2132000" />
+      <workItem from="1642400934456" duration="11000" />
+      <workItem from="1642400956626" duration="38000" />
     </task>
     <servers />
   </component>
