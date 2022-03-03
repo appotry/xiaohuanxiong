@@ -24,11 +24,11 @@ class Postbot
                 $author = Author::where('author_name', '=', trim($data['author']))->find();
                 if (is_null($author)) {//如果作者不存在
                     $author = new Author();
-                    $author->username = $data['author'] ?: '侠名';
-                    $author->password = 'author123456';
+                    $author->username = gen_uid(6);
+                    $author->password = gen_uid(6);
                     $author->email = 'author123456@163.com';
                     $author->status = '1';
-                    $author->author_name = $data['author'] ?: '侠名';
+                    $author->author_name = $data['author'] ?: '无名';
                     $author->save();
                 }
                 $book = new Book();
