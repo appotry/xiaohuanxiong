@@ -32,7 +32,7 @@ class Photo extends Model
             }
         }
 
-        foreach ($photos['data'] as &$photo)
+        foreach ($photos as &$photo)
         {
             if (substr($photo['img_url'], 0, 4) === "http") {
 
