@@ -243,7 +243,7 @@ class SwooleClient implements IHttp2Client
         {
             $recvChannels[$streamId] = $channel = new Channel(-1 === $streamId ? $this->serverPushQueueLength : 1);
         }
-        $swooleResponse = $channel->pop($timeout);
+        $swooleResponse = $channel->pop(null === $timeout ? -1 : $timeout);
         if (-1 !== $streamId)
         {
             unset($recvChannels[$streamId]);
@@ -304,6 +304,10 @@ class SwooleClient implements IHttp2Client
                 }
                 if (!$swooleResponse)
                 {
+                    if ($this->ping())
+                    {
+                        continue;
+                    }
                     $this->close();
 
                     return;
@@ -408,5 +412,15 @@ class SwooleClient implements IHttp2Client
     public function getTimeout()
     {
         return $this->timeout;
+    }
+
+    /**
+     * 发送 ping 帧检查连接.
+     *
+     * @return bool
+     */
+    public function ping()
+    {
+        return $this->http2Client && $this->http2Client->ping();
     }
 }

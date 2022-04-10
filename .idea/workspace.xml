@@ -64,7 +64,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../funadmin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon-site-group" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -120,6 +120,8 @@
       <workItem from="1646274347709" duration="304000" />
       <workItem from="1646274665667" duration="1455000" />
       <workItem from="1646281852988" duration="851000" />
+      <workItem from="1647846343555" duration="662000" />
+      <workItem from="1647847537873" duration="75000" />
     </task>
     <servers />
   </component>

@@ -28,7 +28,7 @@ function captcha($config = null): Response
  */
 function captcha_src($config = null): string
 {
-    return Route::buildUrl('captcha' . ($config ? "/{$config}" : ''));
+    return Route::buildUrl('/captcha' . ($config ? "/{$config}" : ''));
 }
 
 /**
