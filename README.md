@@ -1,6 +1,5 @@
 # xiaohuanxiong
-开源有态度的漫画CMS
-
+打包出售整套漫画CMS产品，包括QQ群，官方商城，转让软著等，有意向联系QQ：2354687725
 - 文档地址：https://www.kancloud.cn/hiliqi/raccoon5/1921259
 - 官方QQ群：780362399
 - 另外开源一套小说cms：https://github.com/hiliqi/novel
