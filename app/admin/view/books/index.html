@@ -76,7 +76,7 @@
 
     <!-- 表格操作列 -->
     <script type="text/html" id="tbBasicTbBar">
-        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="chapter">章节管理</a>
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="chapter">章节</a>
         <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
         <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="disable">下架</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
@@ -162,7 +162,7 @@
                 });
             } else if (obj.event === 'edit') {
                  parent.layui.index.openTab({
-                     title: '编辑漫画',
+                     title: '编辑',
                      url: "{:adminurl('books/edit')}?id=" + data.id,
                      end: function () {
                          insTb.reload();
@@ -170,7 +170,7 @@
                  });
              } else if (obj.event === 'chapter') {
                  parent.layui.index.openTab({
-                     title: '章节管理',
+                     title: '章节',
                      url: "{:adminurl('chapters/index')}?book_id=" + data.id,
                      end: function () {
                          insTb.reload();

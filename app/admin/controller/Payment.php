@@ -4,7 +4,6 @@
 namespace app\admin\controller;
 
 use app\model\UserOrder;
-use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\exception\ErrorException;
 use think\facade\App;
