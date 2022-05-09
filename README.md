@@ -1,8 +1,6 @@
 # xiaohuanxiong
-开源有态度的漫画CMS
-
 - 文档地址：https://www.kancloud.cn/hiliqi/raccoon5/1921259
-- 官方QQ群：780362399
+- 飞机群：https://t.me/easy_cms
 - 另外开源一套小说cms：https://github.com/hiliqi/novel
 
 # 开源协议
