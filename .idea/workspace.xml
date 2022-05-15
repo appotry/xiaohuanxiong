@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/controller/Chapters.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/controller/Chapters.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../easycms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -127,6 +128,7 @@
       <workItem from="1652102306022" duration="701000" />
       <workItem from="1652522797101" duration="787000" />
       <workItem from="1652540484110" duration="4000" />
+      <workItem from="1652630172683" duration="2124000" />
     </task>
     <servers />
   </component>
