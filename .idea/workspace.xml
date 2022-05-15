@@ -50,6 +50,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1zFzXMcC4hKr64iszC3an4JeuMM" />
@@ -64,7 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon-site-group" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../easycms" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -122,6 +123,10 @@
       <workItem from="1646281852988" duration="851000" />
       <workItem from="1647846343555" duration="662000" />
       <workItem from="1647847537873" duration="75000" />
+      <workItem from="1652099199057" duration="985000" />
+      <workItem from="1652102306022" duration="701000" />
+      <workItem from="1652522797101" duration="787000" />
+      <workItem from="1652540484110" duration="4000" />
     </task>
     <servers />
   </component>

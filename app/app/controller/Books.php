@@ -85,13 +85,13 @@ class Books extends Base
                     $book['banner_url'] = $this->img_domain . $book['banner_url'];
                 }
             }
-            cache('topsHomepageApp', $books, null, 'redis');
-            $result = [
-                'success' => 1,
-                'tops' => $books
-            ];
-            return json($result);
+            cache('topsHomepageApp', $books, null, 'redis');           
         }
+        $result = [
+            'success' => 1,
+            'tops' => $books
+        ];
+        return json($result);
     }
 
     public function getEnds()
