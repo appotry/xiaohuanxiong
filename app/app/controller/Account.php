@@ -30,6 +30,11 @@ class Account extends Base
                 $user->password = trim(request()->param('password'));
                 $user->suid = gen_uid(24);
                 $user->level = 2;
+                $pid = $data['pid'];
+                if (empty($pid)) {
+                    $pid = 0;
+                }
+                $user->pid = $pid; //设置用户上线id
                 $result = $user->save();
                 if ($result) {
                     return json(['success' => 1, 'msg' => '注册成功，请登录']);
@@ -58,6 +63,11 @@ class Account extends Base
                 $user->suid = gen_uid(24);
                 $user->level = 2;
                 $user->mobile = trim($data['mobile']);
+                $pid = $data['pid'];
+                if (empty($pid)) {
+                    $pid = 0;
+                }
+                $user->pid = $pid; //设置用户上线id
                 $result = $user->save();
                 if ($result) {
                     return json(['success' => 1, 'msg' => '注册成功，请登录']);
@@ -131,6 +141,11 @@ class Account extends Base
             $user->username = gen_uid(12);
             $user->password = 'abc123';
             $user->suid = $data['suid'];
+            $pid = $data['pid'];
+            if (empty($pid)) {
+                $pid = 0;
+            }
+            $user->pid = $pid;
             $user->level = 1; //游客
             $user->mobile = '';
             $result = $user->save();

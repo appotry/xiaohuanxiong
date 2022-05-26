@@ -32,55 +32,35 @@ class Sitemap extends BaseController
 
     public function gen()
     {
-        $pc_array = $this->create_array('pc');
-        $m_array = $this->create_array('m');
-        $mip_array = $this->create_array('mip');
-
-        $this->gensitemap($pc_array, 'pc');
-        $this->gensitemap($m_array, 'm');
-        $this->gensitemap($mip_array, 'mip');
-
-        $this->genurls('pc');
-        $this->genurls('m');
-        $this->genurls('mip');
+        $array = $this->create_array();
+        $this->gensitemap($array, 'pc');
+        $this->genurls();
         return json(['success' => 1, 'msg' => 'ok']);
     }
 
-    private function gensitemap($array, $name) {
+    private function gensitemap($array) {
         $content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset>\n";
         foreach ($array as $data) {
             $content .= $this->create_item($data);
         }
         $content .= '</urlset>';
-        $fp = fopen(App::getRootPath() .'public/sitemap_'.$name.'.xml', 'w+');
+        $fp = fopen(App::getRootPath() .'public/sitemap.xml', 'w+');
         fwrite($fp, $content);
         fclose($fp);
     }
 
-    private function genurls($option) {
-        if ($option == 'pc') {
-            $site_name = config('site.domain');
-        } else if ($option == 'm') {
-            $site_name = config('site.mobile_domain');
-        } else {
-            $site_name = config('site.mip_domain');
-        }
+    private function genurls() {
+        $site_name = config('site.domain');
         $urls = '';
         foreach ($this->books  as $key => $book) {
             $urls .= $site_name.'/'.BOOKCTRL.'/'.$book->id."\n";
-            $fp = fopen(App::getRootPath() .'public/'.$option.'.txt', 'w+');
+            $fp = fopen(App::getRootPath() .'public/sitemap.txt', 'w+');
             fwrite($fp, $urls);
         }
     }
 
-    private function create_array($option){
-        if ($option == 'pc') {
-            $site_name = config('site.domain');
-        } else if ($option == 'm') {
-            $site_name = config('site.mobile_domain');
-        } else {
-            $site_name = config('site.mip_domain');
-        }
+    private function create_array(){
+        $site_name = config('site.domain');
 
         $data = array();
         $main = array(

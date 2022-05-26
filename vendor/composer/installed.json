@@ -125,17 +125,17 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.4.1",
-            "version_normalized": "7.4.1.0",
+            "version": "7.4.3",
+            "version_normalized": "7.4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79"
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
-                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -167,7 +167,7 @@
                 "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
-            "time": "2021-12-06T18:43:05+00:00",
+            "time": "2022-05-25T13:24:33+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -238,7 +238,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.4.1"
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.3"
             },
             "funding": [
                 {
@@ -1778,17 +1778,17 @@
         },
         {
             "name": "topthink/think-captcha",
-            "version": "v3.0.4",
-            "version_normalized": "3.0.4.0",
+            "version": "v3.0.7",
+            "version_normalized": "3.0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-captcha.git",
-                "reference": "db5be361d3cd664d236fb95d5dffe93a117283ad"
+                "reference": "a450602932a5d9ba183e288b79921ba3b9a92331"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-captcha/zipball/db5be361d3cd664d236fb95d5dffe93a117283ad",
-                "reference": "db5be361d3cd664d236fb95d5dffe93a117283ad",
+                "url": "https://api.github.com/repos/top-think/think-captcha/zipball/a450602932a5d9ba183e288b79921ba3b9a92331",
+                "reference": "a450602932a5d9ba183e288b79921ba3b9a92331",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1800,7 +1800,7 @@
             "require": {
                 "topthink/framework": "^6.0.0"
             },
-            "time": "2022-01-07T06:34:19+00:00",
+            "time": "2022-04-23T02:38:14+00:00",
             "type": "library",
             "extra": {
                 "think": {
@@ -1834,7 +1834,7 @@
             "description": "captcha package for thinkphp",
             "support": {
                 "issues": "https://github.com/top-think/think-captcha/issues",
-                "source": "https://github.com/top-think/think-captcha/tree/v3.0.4"
+                "source": "https://github.com/top-think/think-captcha/tree/v3.0.7"
             },
             "install-path": "../topthink/think-captcha"
         },

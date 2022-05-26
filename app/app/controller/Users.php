@@ -78,21 +78,6 @@ class Users extends BaseAuth
         }
     }
 
-//    public function history()
-//    {
-//        $redis = RedisHelper::GetInstance();
-//        $vals = $redis->hVals($this->redis_prefix . ':history:' . $this->uid);
-//        $books = array();
-//        foreach ($vals as $val) {
-//            $books[] = json_decode($val, true);
-//        }
-//        $result = [
-//            'success' => 1,
-//            'books' => $books
-//        ];
-//        return json($result);
-//    }
-
     public function getVipExpireTime()
     {
         $time = intval(session('vip_expire_time'));
@@ -281,5 +266,17 @@ class Users extends BaseAuth
         } catch (ModelNotFoundException $e) {
             return json(['success' => 0, 'msg' => $e->getMessage() ]);
         }
+    }
+
+    public function getSiteInfo(){
+        $info = array();
+        $info['domain'] = config('site.domain');
+        $info['front_domain'] =config('site.front_domain');
+        $info['img_domain'] = config('site.img_domain');
+        $info['site_name'] = config('site.site_name');
+        return json([
+            'success' => 1,
+            'info' => $info
+        ]);
     }
 }

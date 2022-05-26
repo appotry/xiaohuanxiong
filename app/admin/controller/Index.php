@@ -60,7 +60,7 @@ class Index extends BaseAdmin
         $site_name = config('site.site_name');
         $domain = config('site.domain');
         $img_domain = config('site.img_domain');
-        $mobile_domain = config('site.mobile_domain');
+        $front_domain = config('site.front_domain');
         $salt = config('site.salt');
         $api_key = config('site.api_key');
         $app_key = config('site.app_key');
@@ -80,7 +80,7 @@ class Index extends BaseAdmin
             'site_name' => $site_name,
             'domain' => $domain,
             'img_domain' => $img_domain,
-            'mobile_domain' => $mobile_domain,
+            'front_domain' => $front_domain,
             'salt' => $salt,
             'api_key' => $api_key,
             'app_key' => $app_key,
@@ -96,7 +96,7 @@ class Index extends BaseAdmin
             $site_name = replaceSpecialChar(input('site_name'));
             $domain = replaceSpecialChar(input('domain'));
             $img_domain = replaceSpecialChar(input('img_domain'));
-            $mobile_domain = replaceSpecialChar(input('mobile_domain'));
+            $front_domain = replaceSpecialChar(input('front_domain'));
             $salt = replaceSpecialChar(input('salt'));
             $api_key = replaceSpecialChar(input('api_key'));
             $app_key = replaceSpecialChar(input('app_key'));
@@ -106,7 +106,7 @@ class Index extends BaseAdmin
 return [
     'domain' => '{$domain}',
     'img_domain' => '{$img_domain}',
-    'mobile_domain' => '{$mobile_domain}', 
+    'front_domain' => '{$front_domain}', 
     'site_name' => '{$site_name}',
     'salt' => '{$salt}',
     'api_key' => '{$api_key}', 

@@ -15,31 +15,24 @@ class Sitemap extends BaseAdmin
         if (request()->isPost()) {
             $pagesize = input('pagesize');
             $part = input('part');
-            $end = input('end');
-            $this->gen($pagesize, $part, $end);
+            $this->gen($pagesize, $part);
         }
         return view();
     }
 
-    private function gen($pagesize, $part, $end)
+    private function gen($pagesize, $part)
     {
-        if ($end == 'pc') {
-            $site_name = config('site.domain');
-        } elseif ($end == 'm') {
-            $site_name = config('site.mobile_domain');
-        } elseif ($end == 'mip') {
-            $site_name = config('site.mip_domain');
-        }
+        $site_name = config('site.domain');
         if ($part == 'book') {
-            $this->genbook($pagesize, $site_name, $end);
+            $this->genbook($pagesize, $site_name);
         } elseif ($part == 'chapter') {
-            $this->genchapter($pagesize, $site_name, $end);
+            $this->genchapter($pagesize, $site_name);
         } elseif ($part == 'article') {
-            $this->genarticle($pagesize, $site_name, $end);
+            $this->genarticle($pagesize, $site_name);
         }
     }
 
-    private function genbook($pagesize, $site_name, $end)
+    private function genbook($pagesize, $site_name)
     {
         $data = Book::where('1=1');
         $total = $data->count();
@@ -55,7 +48,7 @@ class Sitemap extends BaseAdmin
                     $book['param'] = $book['unique_id'];
                 }
                 $temp = array(
-                    'loc' => $site_name . '/' . $end . '/' . BOOKCTRL . '/' . $book['param'],
+                    'loc' => $site_name .  '/' . BOOKCTRL . '/' . $book['param'],
                     'priority' => '0.9',
                 );
                 array_push($arr, $temp);
@@ -64,10 +57,10 @@ class Sitemap extends BaseAdmin
                 $content .= $this->create_item($item);
             }
             $content .= '</urlset>';
-            $sitemap_name = '/sitemap_book_' . $end . '_' . 'books' . '_' . $i . '.xml';
+            $sitemap_name = '/sitemap_book_' . 'books' . '_' . $i . '.xml';
             file_put_contents(App::getRootPath() . 'public' . $sitemap_name, $content);
-            file_put_contents(App::getRootPath() . 'public' . '/sitemap_book_' . $end . '_newest' . '.xml', $content);
-            echo '<a href="' . $sitemap_name . '" target="_blank">' . $end . '端网站地图制作成功！点击这里查看</a><br />';
+            file_put_contents(App::getRootPath() . 'public' . '/sitemap_book_newest' . '.xml', $content);
+            echo '<a href="' . $sitemap_name . '" target="_blank">网站地图制作成功！点击这里查看</a><br />';
             flush();
             ob_flush();
             unset($arr);
@@ -75,7 +68,7 @@ class Sitemap extends BaseAdmin
         }
     }
 
-    private function genchapter($pagesize, $site_name, $end)
+    private function genchapter($pagesize, $site_name)
     {
         $data = Chapter::where('1=1');
         $total = $data->count();
@@ -86,7 +79,7 @@ class Sitemap extends BaseAdmin
             $chapters = $data->limit($pagesize * ($i - 1), $pagesize)->select();
             foreach ($chapters as $chapter) {
                 $temp = array(
-                    'loc' => $site_name . '/' . $end . '/' . CHAPTERCTRL . '/' . $chapter['id'],
+                    'loc' => $site_name .  '/' . CHAPTERCTRL . '/' . $chapter['id'],
                     'priority' => '0.9',
                 );
                 array_push($arr, $temp);
@@ -95,10 +88,10 @@ class Sitemap extends BaseAdmin
                 $content .= $this->create_item($item);
             }
             $content .= '</urlset>';
-            $sitemap_name = '/sitemap_chapter_' . $end . '_' . 'chapters' . '_' . $i . '.xml';
+            $sitemap_name = '/sitemap_chapter_' . 'chapters' . '_' . $i . '.xml';
             file_put_contents(App::getRootPath() . 'public' . $sitemap_name, $content);
-            file_put_contents(App::getRootPath() . 'public' . '/sitemap_chapter_' . $end . '_newest' . '.xml', $content);
-            echo '<a href="' . $sitemap_name . '" target="_blank">' . $end . '端网站地图制作成功！点击这里查看</a><br />';
+            file_put_contents(App::getRootPath() . 'public' . '/sitemap_chapter_newest' . '.xml', $content);
+            echo '<a href="' . $sitemap_name . '" target="_blank">网站地图制作成功！点击这里查看</a><br />';
             flush();
             ob_flush();
             unset($arr);
@@ -106,7 +99,7 @@ class Sitemap extends BaseAdmin
         }
     }
 
-    private function genarticle($pagesize, $site_name, $end)
+    private function genarticle($pagesize, $site_name)
     {
         $data = Article::where('1=1');
         $total = $data->count();
@@ -122,7 +115,7 @@ class Sitemap extends BaseAdmin
                     $article['param'] = $article['unique_id'];
                 }
                 $temp = array(
-                    'loc' => $site_name . '/' . $end . '/' . CHAPTERCTRL . '/' . $article['param'],
+                    'loc' => $site_name . '/' . CHAPTERCTRL . '/' . $article['param'],
                     'priority' => '0.9',
                 );
                 array_push($arr, $temp);
@@ -131,10 +124,10 @@ class Sitemap extends BaseAdmin
                 $content .= $this->create_item($item);
             }
             $content .= '</urlset>';
-            $sitemap_name = '/sitemap_article_' . $end . '_' . $i . '.xml';
+            $sitemap_name = '/sitemap_article_'. $i . '.xml';
             file_put_contents(App::getRootPath() . 'public' . $sitemap_name, $content);
-            file_put_contents(App::getRootPath() . 'public' . '/sitemap_article_' . $end . '_newest' . '.xml', $content);
-            echo '<a href="' . $sitemap_name . '" target="_blank">' . $end . '端网站地图制作成功！点击这里查看</a><br />';
+            file_put_contents(App::getRootPath() . 'public' . '/sitemap_article_newest' . '.xml', $content);
+            echo '<a href="' . $sitemap_name . '" target="_blank">网站地图制作成功！点击这里查看</a><br />';
             flush();
             ob_flush();
             unset($arr);

@@ -28,7 +28,6 @@ class Base extends BaseController
         $d = '/pc/';
         if ($this->request->isMobile()) {
             $d = '/m/';
-            $this->url = config('site.mobile_domain');
         }
         $this->uid = session('xwx_user_id');
         $this->prefix = Env::get('database.prefix');
