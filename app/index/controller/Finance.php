@@ -175,6 +175,7 @@ class Finance extends BaseUc
                 $res = $code->save();
                 if ($res) {
                     $order = new UserOrder();
+                    $order->order_id = time() . gen_uid(10);
                     $order->user_id = $this->uid;
                     $order->money = $code->money;
                     $order->status = 1; //完成订单
@@ -253,6 +254,7 @@ class Finance extends BaseUc
                         $pay_type = 2; //充值渠道 vip
                         $pay_code = request()->post('code');
                         $order = new UserOrder();
+                        $order->order_id = time() . gen_uid(10);
                         $order->user_id = $this->uid;
                         $order->money = $money;
                         $order->status = 0; //未完成订单
@@ -260,8 +262,7 @@ class Finance extends BaseUc
                         $order->expire_time = time() + 86400; //订单失效时间往后推一天
                         $res = $order->save();
                         if ($res) {
-                            $number = config('site.domain') . '_';
-                            $r = $this->pay->submit($number . $order->id, $money, $pay_type, $pay_code); //调用功能类，进行充值处理
+                            $r = $this->pay->submit($order->order_id, $money, $pay_type, $pay_code); //调用功能类，进行充值处理
                             if ($r['type'] == 'html') {
                                 $template = new \think\Template();
                                 $template->display($r['content']);
