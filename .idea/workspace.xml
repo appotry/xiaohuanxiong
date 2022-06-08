@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/controller/Sitemap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Sitemap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/view/index/sys.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/view/index/sys.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/controller/Sitemap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/controller/Sitemap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/controller/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/controller/Account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/controller/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/controller/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/controller/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/site.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -143,6 +135,8 @@
       <workItem from="1653218453593" duration="1906000" />
       <workItem from="1653285487909" duration="4518000" />
       <workItem from="1653383647082" duration="669000" />
+      <workItem from="1653582623205" duration="140000" />
+      <workItem from="1653584117197" duration="603000" />
     </task>
     <servers />
   </component>
