@@ -39,20 +39,6 @@ class Account extends Base
                     $user->suid = gen_uid(24);
                     $result = $user->save();
                     if ($result) {
-                        if ($pid > 0) {
-                            try {
-                                $puser = User::findOrFail($pid);
-                                if ($puser) {
-                                    $finance = new UserFinance();
-                                    $finance->user_id = $pid;
-                                    $finance->money = config('payment.reg_rewards');
-                                    $finance->usage = 4;
-                                    $finance->summary = '下线注册奖励';
-                                    $finance->save();
-                                }
-                            } catch (ModelNotFoundException $e) {
-                            }
-                        }
                         return json(['err' => 0, 'msg' => '注册成功，请登录']);
                     } else {
                         return json(['err' => 1, 'msg' => '注册失败，请尝试重新注册']);
