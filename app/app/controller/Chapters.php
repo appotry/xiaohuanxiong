@@ -60,20 +60,22 @@ class Chapters extends Base
 				cache('app:chapter:' . $id, $chapter, null, 'redis');
             }
 
-            $photos = cache('app:pics:'.$id);
-            if(!$photos){
-                $photos = Db::name('photo')->where('chapter_id','=',$chapter['id'])
-                    ->order('pic_order','desc')
-                    ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->select();
-                foreach ($photos as &$photo) {
+             $photos = cache('app:pics:' . $id);
+            if (!$photos) {
+                $data = Db::name('photo')->where('chapter_id', '=', $chapter['id'])
+                    ->order('pic_order', 'desc')
+                    ->partition(['p0', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10'])->select();
+                foreach ($data as $key => $photo) {
                     if (substr($photo['img_url'], 0, 4) === "http") {
 
                     } else {
                         $photo['img_url'] = $this->img_domain . $photo['img_url'];
                     }
+                    array_push($photos, $photo);
                 }
-                cache('app:pics:' . $id, $chapter, null, 'redis');
+                cache('app:pics:' . $id, $photos, null, 'redis');
             }
+            
             $flag = true;
             if ($chapter->book->start_pay >= 0) {
                 if ($chapter->chapter_order >= $chapter->book->start_pay) { //如果本章序大于起始付费章节，则是付费章节
