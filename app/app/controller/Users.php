@@ -28,7 +28,7 @@ class Users extends BaseAuth
         foreach ($favors as &$favor) {
             try {
                 $book = Book::findOrFail($favor->book_id);
-                $favor['book'] = $book;
+                $favor['book'] = $book->toArray();
                 if (substr($book->cover_url, 0, 4) === "http") {
 
                 } else {
