@@ -17,7 +17,11 @@ class Payment extends BaseAdmin
     public function index()
     {
         if (request()->isPost()) {
-            $content = replaceSpecialChar(input('json'));
+            $content = input('json');
+            if(str_contains($content, '<?')){
+                return json(['err' => 1, 'msg' => '保存失败，有非法字符']);
+            }
+            $content = '<?php'.PHP_EOL.$content;
             try {
                 file_put_contents(App::getRootPath() . 'config/payment.php', $content);
                 return json(['err' => 0, 'msg' => '保存成功']);
@@ -27,6 +31,7 @@ class Payment extends BaseAdmin
         }
         try {
             $content = file_get_contents(App::getRootPath() . 'config/payment.php');
+            $content = str_replace('<?php','',$content);
             View::assign('json', $content);
             return view();
         } catch (ErrorException $e) {
