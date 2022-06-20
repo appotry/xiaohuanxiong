@@ -3,32 +3,42 @@
 
 namespace app\service;
 
-//支付宝官方支付
+
+use app\common\epay\AlipaySubmit;
+use app\model\UserOrder;
+use think\db\exception\ModelNotFoundException;
+
 class PayService
 {
     public function submit($order_id, $money, $pay_type, $pay_code)
     {
-        $params = new \Yurun\PaySDK\AlipayApp\Params\PublicParams;
-        $params->appID = config('payment.pay.appid');
-        $params->format = 'JSON';
-        $params->charset = 'utf-8';
-        $params->version = '1.0';
-        $params->appPrivateKey = config('payment.pay.appPrivateKey');
-        $params->appPublicKey = config('payment.pay.appPublicKey');
-        $params->apiDomain = config('payment.pay.getway');
+        $notifyUrl =  config('site.domain') . '/api.php/paynotify'; //异步回调地址，外网能访问
+        $backUrl = config('payment.returnUrl'); // 支付后跳转返回地址
+        $alipay_config['partner'] = config('payment.pay.appid');
+        $alipay_config['key'] = config('payment.pay.appkey');
+        //签名方式 不需修改
+        $alipay_config['sign_type'] = strtoupper('MD5');
+        //字符编码格式 目前支持 gbk 或 utf-8
+        $alipay_config['input_charset'] = strtolower('utf-8');
+        //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
+        $alipay_config['transport'] = str_replace('://', '', 'http://');
+        $alipay_config['transport'] = str_replace('://', '', 'https://');
+        //支付API地址
+        $alipay_config['apiurl'] = config('payment.pay.getway');
 
-        // SDK实例化，传入公共配置
-        $pay = new \Yurun\PaySDK\AlipayApp\SDK($params);
-        // 支付接口
-        $request = new \Yurun\PaySDK\AlipayApp\Wap\Params\Pay\Request;
-        $request->notify_url = config('site.domain') . '/api.php/paynotify'; // 支付后通知地址（作为支付成功回调，这个可靠）
-        $request->return_url = config('payment.returnUrl'); // 支付后跳转返回地址
-        $request->businessParams->out_trade_no = $order_id; // 商户订单号
-        $request->businessParams->total_amount = $money; // 价格
-        $request->businessParams->subject = '漫画充值'; // 商品标题
+        $parameter = [
+            'pid' => $alipay_config['partner'],
+            'out_trade_no' => $order_id,
+            'money' => $money,
+            'sitename' => config('site.site_name'),
+            'name' => '漫画充值',
+            'type' => $pay_code,
+            'notify_url' => $notifyUrl,
+            'return_url' => $backUrl,
+        ];
 
-        // 获取跳转url
-        $pay->prepareExecute($request, $url);
-        return ['type' => 'url', 'content' => $url];
+        $alipaySubmit = new AlipaySubmit($alipay_config);
+        $html_text = $alipaySubmit->buildRequestForm($parameter);
+        return ['type' => 'html', 'content' => $html_text];
     }
 }
