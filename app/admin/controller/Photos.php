@@ -41,12 +41,19 @@ class Photos extends BaseAdmin
         $count = $data->count();
         $pics = $data->limit(($page - 1) * $limit, $limit)
             ->order('pic_order', 'desc')->select();
+        $img_domain = config('site.img_domain');
         $arr = array();
         foreach ($pics as $pic) {
+            $img = $pic['img_url'];
+            if (substr($img, 0, 4) === "http") {
+
+            } else {
+                $img = $img_domain . $img;
+            }
             array_push($arr, [
                 'name' => '图片' . $pic['id'],
-                'url' => $pic['img_url'],
-                'smUrl' => $pic['img_url'],
+                'url' => $img,
+                'smUrl' => $img,
                 'isDir' => false,
                 'id' => $pic['id']
             ]);

@@ -19,26 +19,27 @@ class Photo extends Model
     {
         $img_domain = config('site.img_domain');
         if ($num == 0) {
-            $photos = Db::name('photo')->where($where)->order($order)
+            $data = Db::name('photo')->where($where)->order($order)
                 ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->select();
         } else {
             if (strpos($num, ',') !== false) {
                 $arr = explode(',',$num);
-                $photos = Db::name('photo')->where($where)->limit($arr[0],$arr[1])->order($order)
+                $data = Db::name('photo')->where($where)->limit($arr[0],$arr[1])->order($order)
                     ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->select();
             } else {
-                $photos = Db::name('photo')->where($where)->limit($num)->order($order)
+                $data = Db::name('photo')->where($where)->limit($num)->order($order)
                     ->partition(['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'])->select();
             }
         }
-
-        foreach ($photos as &$photo)
+        $photos = array();
+        foreach ($data as $key => $photo)
         {
             if (substr($photo['img_url'], 0, 4) === "http") {
 
             } else {
                 $photo['img_url'] = $img_domain . $photo['img_url'];
             }
+            array_push($photos, $photo);
         }
         return $photos;
     }
@@ -53,18 +54,20 @@ class Photo extends Model
                 'query' => request()->param(),
             ]);
 
-        $arr = $data->toArray();     
-        foreach ($arr['data'] as &$photo)
+        $arr = $data->toArray();
+        $photos = array();
+        foreach ($arr['data'] as $key => $photo)
         {
             if (substr($photo['img_url'], 0, 4) === "http") {
 
             } else {
                 $photo['img_url'] = $img_domain . $photo['img_url'];
             }
+            array_push($photos, $photo);
         }
         
         $paged = array();
-        $paged['photos'] = $arr['data'];
+        $paged['photos'] = $photos;
         $paged['page'] = [
             'total' => $arr['total'],
             'per_page' => $arr['per_page'],
