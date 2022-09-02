@@ -23,22 +23,24 @@ class Banner extends Model
     {
         $img_domain = config('site.img_domain');
         if ($num == 0) {
-            $banners = Banner::with('book')
+            $data = Banner::with('book')
                 ->order($order)->where($where)->select();
         } else {
             if (strpos($num, ',') !== false) {
                 $arr = explode(',',$num);
-                $banners = Banner::where($where)
+                $data = Banner::where($where)
                     ->limit($arr[0],$arr[1])->order($order)->select();
             } else {
-                $banners = Banner::with('book')->order($order)->where($where)->limit($num)->select();
+                $data = Banner::with('book')->order($order)->where($where)->limit($num)->select();
             }
         }
 
-        foreach ($banners as &$banner) {
+        $banners = array();
+        foreach ($data as $banner) {
             if (substr($banner['pic_name'], 0, strlen('http')) != 'http') {
                 $banner['pic_name'] = $img_domain .  $banner['pic_name'];
             }
+            array_push($banners, $banner);
         }
         return $banners;
     }

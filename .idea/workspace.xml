@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/controller/Photos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Photos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/controller/Chapters.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/controller/Chapters.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/ChapterLogs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/Photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Photo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/PhotoLogs.php" beforeDir="false" />
-    </list>
+    <list default="true" id="4edf7187-72d1-4a90-80f8-3d6044d4179d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raccoon-site-group" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -144,6 +137,7 @@
       <workItem from="1653584117197" duration="603000" />
       <workItem from="1654942636906" duration="1191000" />
       <workItem from="1656355449457" duration="1014000" />
+      <workItem from="1656830889074" duration="260000" />
     </task>
     <servers />
   </component>
